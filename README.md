@@ -10,6 +10,9 @@
     <img src="https://img.shields.io/badge/Vector_DB-ChromaDB-4A154B?logo=databricks&logoColor=white" alt="ChromaDB">
     <img src="https://img.shields.io/badge/License-MIT-green" alt="License">
   </p>
+  <p align="center">
+    <a href="https://rag-document-chat-mohamedsafiq.streamlit.app/"><img src="https://img.shields.io/badge/🚀_Live_Demo-Click_Here-FF4B4B?style=for-the-badge" alt="Live Demo"></a>
+  </p>
 </p>
 
 ---
