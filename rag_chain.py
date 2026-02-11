@@ -4,6 +4,7 @@ Handles LLM interaction with strict/hybrid mode prompt templates and source cita
 """
 
 import os
+import streamlit as st
 from dotenv import load_dotenv
 from huggingface_hub import InferenceClient
 
@@ -12,7 +13,12 @@ load_dotenv()
 # ---------------------------------------------------------------------------
 # Configuration
 # ---------------------------------------------------------------------------
-API_TOKEN = os.environ.get("HUGGINGFACEHUB_API_TOKEN")
+# Streamlit Cloud secrets take priority, then .env fallback
+try:
+    API_TOKEN = st.secrets["HUGGINGFACEHUB_API_TOKEN"]
+except Exception:
+    API_TOKEN = os.environ.get("HUGGINGFACEHUB_API_TOKEN")
+
 MODEL_ID = "meta-llama/Llama-3.2-3B-Instruct"
 
 client = InferenceClient(api_key=API_TOKEN)
